@@ -6,10 +6,16 @@ Space Warriors
 Кодот на играта се состои од четири форми (Form1-почетен интерфејс на играта, каде играчот може да избере дали да ја започне играта, да се запознае со начинот на кој се игра играта или да ја напушти; NewGame-интерфејс во којшто се игра играта; HowToPlay-интерфејс во којшто се опишани правилата на играта и GameOver-интерфејс во кој е прикажан исходот од играта)  и три класи (SpaceShip,Alien,SpaceDocument).
 Во класата SpaceShip и во класата Alien се дефинираат позициите на која ќе се наоѓаат објектите од овие класи.  Во класата SpaceShip се чуваат информации за сликата, состојбата на објектот т.е бројот на преостанати животи. Во оваа класа ги имплементираме методите за пукање и поместување на објектот.
 Во класата  SpaceDocument се чува објект од класата SpaceShip и листа од објекти на класата Alien, како и моменталниот резултат. Во оваа класа се имплементирани методите за проверка дали леталото е допрено од некој вонземјанин и соодветно ажурирање на животите. Исто така тука е имплементиран методот со којшто се убиваат вонземјаните.
-/*
+
+
+
+        /*
          * metod koj proveruva dali pri pukanje nastanuva kolizija so nekoj objekt od listata aliens
          * i povik kon funkcija koja gi presmetuva poenite
          * */
+         
+         
+         
         public void areTouching()
         {
             if (ship.pukaj)
@@ -23,29 +29,25 @@ Space Warriors
                     }
 
                 }
-
-            RemoveAlien();
+    RemoveAlien();
         }
+
  Во овој метод преку проверка на променливата пукај одредуваме дали да се изврши изминување на сите објекти од листата aliens и да се провери дали треба да биде отстранет од самата листа и соодветно да се зголеми бројот на освоени поени.
 
-/*
-         * funkcija koja proveruva dali nastanal sudir pomegu ship i nekoj od objektite od listata aliens
+        /*
+                 * funkcija koja proveruva dali nastanal sudir pomegu ship i nekoj od objektite od listata aliens
          * */
         public bool isKilled(Rectangle r1, Rectangle r2)
         {
             Rectangle intersect = Rectangle.Intersect(r1, r2);
-
             if (intersect != Rectangle.Empty)
             {
                 return true;
             }
-
             return false;
         }
-
-
-
-        /*funkcija koja azurira koja ja odreduva sostojbata na ship i objektite od listata i
+        /*
+        funkcija koja azurira koja ja odreduva sostojbata na ship i objektite od listata i
         soodvetno odreduva dali sekoj od niv treba da se iscrta
          */
         public void updateIzcesni()
@@ -59,11 +61,8 @@ Space Warriors
 
 
                 }
-
                 ship.updateZiv();
-
-
-            }
+    }
             RemoveAlien();
         }
 
@@ -71,17 +70,15 @@ Space Warriors
 
 Функцијата public bool isKilled(Rectangle r1, Rectangle r2) прима два аргументи, правоаголник којшто ги претставува границите на еден објект и правоаголник кој ги претставува границите на другиот објект и преку готовата  функција intersect дали настанува пресек помеѓу нив.
 
-//generiranje na nov objekt od klasata Alien, negovo pridvizuvanje i prikaz na momentalniot broj na zivoti 
-        private void timerAliens_Tick(object sender, EventArgs e)
+        //generiranje na nov objekt od klasata Alien, negovo pridvizuvanje i prikaz na momentalniot broj na zivoti 
+                private void timerAliens_Tick(object sender, EventArgs e)
         {
             Alien a = new Alien(Width,Height);
             space.AddAlien(a);
             foreach (Alien alien in space.aliens)
             {
                 alien.MoveAlien();
-
-                
-            }
+                }
             space.updateIzcesni();
             lblZivoti.Text = space.ship.Zivoti.ToString();
             
@@ -93,17 +90,3 @@ Space Warriors
 
 Правила на играта
 Вселенското летало е клучниот објект во играта којшто се придвижува лево и десно преку интеракција на корисникот со притискање на стрелките од тастатура. Исто така вселенското летало може да пука со притискање на копчето Space од тастатурата. Целта е да се убијат што е можно поголем број на вонземјани за што за секој убиен се добиваат по 10 поени. Играта ќе заврши само доколку бројот на животи на вселенското летало е еднаков на 0 или доколку истече времето предвидено за игра.
-Почетниот интерфејс на играта е следниот:
- 
-Со избор на копчето How To Play се отвара интерфејс во којшто се објаснети правилата на игра.
- 
-
-Со кликање на копчето Start Game се отвара следниот интерфејс:
-
- 
-
-Во зависност од состојбата од којашто се повикал GameOver се појавува исходот од играта.
-  
-
-![logo]: https://github.com/IzabelaH/SpaceWarrior/blob/master/SpaceWarriors/Recources/start.png
-
