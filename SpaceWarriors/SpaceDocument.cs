@@ -65,6 +65,67 @@ namespace ProbaProekt
             RemoveAlien();
         }
 
+         /*
+         * funkcija koja proveruva dali nastanal sudir pomegu ship i nekoj od objektite od listata aliens
+         * */
+        public bool isKilled(Rectangle r1, Rectangle r2)
+        {
+            Rectangle intersect = Rectangle.Intersect(r1, r2);
+
+            if (intersect != Rectangle.Empty)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        /*funkcija koja azurira koja ja odreduva sostojbata na ship i objektite od listata i
+        soodvetno odreduva dali sekoj od niv treba da se iscrta
+         */
+        public void updateIzcesni()
+        {
+            foreach (Alien al in aliens)
+            {
+                if (isKilled(al.GraniciDvizenje, ship.GraniciDvizenje))
+                {
+                    ship.dopreno = true;
+                    al.iscezni = true;
+
+
+                }
+
+                ship.updateZiv();
+
+
+            }
+            RemoveAlien();
+        }
+
+
+        
+        public void RemoveAlien()
+        {
+            for (int i = 0; i < aliens.Count; i++)
+            {
+                if (aliens[i].iscezni)
+                {
+
+                    aliens.RemoveAt(i);
+                }
+            }
+        }
+
+        //funkcija za presmetuvanje na poenite
+        public void CountScore()
+        {
+
+            if (!ship.dopreno)
+            {
+                score += 10;
+            }
+        }
+
        
 
 
