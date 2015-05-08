@@ -99,7 +99,7 @@ Space Warriors
  
 
 Со кликање на копчето Start Game се отвара следниот интерфејс:
-![Alt text](https://github.com/IzabelaH/SpaceWarrior/blob/master/SpaceWarriors/Recources/start.png)
+![Alt text](https://github.com/IzabelaH/SpaceWarrior/blob/master/SpaceWarriors/Recources/playgame.png)
 
  
 
