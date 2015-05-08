@@ -94,3 +94,20 @@ Space Warriors
 Почетниот интерфејс на играта е следниот:
 ![Alt text](https://github.com/IzabelaH/SpaceWarrior/blob/master/SpaceWarriors/Recources/pocetok.png)
 
+Со избор на копчето How To Play се отвара интерфејс во којшто се објаснети правилата на игра.
+![Alt text](https://github.com/IzabelaH/SpaceWarrior/blob/master/SpaceWarriors/Recources/howtoplay.png)
+ 
+
+Со кликање на копчето Start Game се отвара следниот интерфејс:
+![Alt text](https://github.com/IzabelaH/SpaceWarrior/blob/master/SpaceWarriors/Recources/start.png)
+
+ 
+
+Во зависност од состојбата од којашто се повикал GameOver се појавува исходот од играта.
+  
+
+![Alt text](https://github.com/IzabelaH/SpaceWarrior/blob/master/SpaceWarriors/Recources/gameoverlose.png)
+
+![Alt text](https://github.com/IzabelaH/SpaceWarrior/blob/master/SpaceWarriors/Recources/gameoverwin.png)
+
+
