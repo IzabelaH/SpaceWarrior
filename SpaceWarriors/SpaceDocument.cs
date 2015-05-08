@@ -125,11 +125,7 @@ namespace ProbaProekt
                 score += 10;
             }
         }
-
-       
-
-
-
+        
     }
 
 }
